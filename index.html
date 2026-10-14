@@ -9,6 +9,23 @@
   <title>VorrBudget: A budget that works the way you get paid</title>
   <meta name="description" content="VorrBudget plans your money one paycheck at a time, so you know every week if you're covered.">
   <link rel="canonical" href="https://vorrbudget.com/">
+
+  <!-- SHARE IMAGE (Open Graph / Twitter). The image is assets/og-image.png (1200x630) on this site. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VorrBudget">
+  <meta property="og:url" content="https://vorrbudget.com/">
+  <meta property="og:title" content="VorrBudget: A budget that works the way you get paid">
+  <meta property="og:description" content="VorrBudget plans your money one paycheck at a time, so you know every week if you're covered.">
+  <meta property="og:image" content="https://vorrbudget.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="VorrBudget logo and the words: A budget that works the way you get paid.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VorrBudget: A budget that works the way you get paid">
+  <meta name="twitter:description" content="VorrBudget plans your money one paycheck at a time, so you know every week if you're covered.">
+  <meta name="twitter:image" content="https://vorrbudget.com/assets/og-image.png">
+  <meta name="twitter:image:alt" content="VorrBudget logo and the words: A budget that works the way you get paid.">
+
   <link rel="preload" href="assets/fonts/montserrat-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" sizes="512x512" href="assets/app-icon.png">
@@ -18,49 +35,132 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="wrap">
-      <a class="logo-link" href="/">
-        <!-- LOGO: symbol (light/dark SVG) + the word "VorrBudget" as text in Montserrat Bold -->
-        <picture>
-          <source srcset="assets/logo-mark-dark.svg" media="(prefers-color-scheme: dark)">
-          <img class="logo-mark" src="assets/logo-mark-light.svg" alt="" width="352" height="425">
-        </picture>
-        <span class="wordmark">VorrBudget</span>
-      </a>
-    </div>
-  </header>
+  <div class="hero-band">
+    <header class="site-header site-header--dark">
+      <div class="wrap header-row">
+        <a class="logo-link" href="/">
+          <!-- LOGO: on the dark band the dark-mode symbol is always used; "VorrBudget" is text in Montserrat Bold -->
+          <img class="logo-mark" src="assets/logo-mark-dark.svg" alt="" width="352" height="425">
+          <span class="wordmark">VorrBudget</span>
+        </a>
+        <a class="header-cta" href="#waitlist">Join the waitlist</a>
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="headline">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1 id="headline">A budget that works the way you get paid.</h1>
+          <p class="lead">VorrBudget plans your money one paycheck at a time, so you know every week if you're covered.</p>
+
+          <h2 class="visually-hidden">Download</h2>
+          <ul class="stores">
+            <!-- STORE BUTTON: Google Play.
+                 To go live, replace the <span> below with:
+                 <a class="store" href="PLAY_STORE_URL">Get it on Google Play</a> -->
+            <li><span class="store store--soon"><span class="store-name">Google Play</span> <span class="store-status">Coming soon</span></span></li>
+
+            <!-- STORE BUTTON: iPhone.
+                 To go live, replace the <span> below with:
+                 <a class="store" href="APP_STORE_URL">Download for iPhone</a> -->
+            <li><span class="store store--soon"><span class="store-name">iPhone</span> <span class="store-status">Coming soon</span></span></li>
+
+            <!-- STORE BUTTON: Desktop.
+                 To go live, replace the <span> below with:
+                 <a class="store" href="DESKTOP_URL">Get it for Desktop</a> -->
+            <li><span class="store store--soon"><span class="store-name">Desktop</span> <span class="store-status">Coming soon</span></span></li>
+          </ul>
+        </div>
+
+        <!-- PHONE: an example illustration of the Home screen (pure CSS, no JavaScript).
+             TO USE A REAL SCREENSHOT: replace everything inside <div class="phone-screen"> with
+               <img class="phone-shot" src="assets/screenshots/home.png" alt="DESCRIBE THE SCREEN" width="390" height="844">
+             and remove role="img" and aria-label from <div class="phone"> (the alt text replaces them). -->
+        <div class="hero-visual">
+          <div class="phone" role="img" aria-label="Example illustration of the VorrBudget Home screen: $186.40 left to spend this week, and the weeks ahead, where a short week turns covered.">
+            <div class="phone-screen" aria-hidden="true">
+              <div class="app-bar">
+                <picture>
+                  <source srcset="assets/logo-mark-dark.svg" media="(prefers-color-scheme: dark)">
+                  <img class="app-mark" src="assets/logo-mark-light.svg" alt="" width="352" height="425">
+                </picture>
+                <span class="app-name">VorrBudget</span>
+              </div>
+
+              <div class="app-card">
+                <p class="app-label">Left to spend this week</p>
+                <p class="app-amount">$186.40</p>
+              </div>
+
+              <!-- WEEKS STRIP: the 4th week starts red and "Short", then turns green and "Covered".
+                   Labels: "Now", then "Wk 2" to "Wk 7". -->
+              <div class="app-card weeks">
+                <ol class="weeks-list">
+                  <li class="week week--1"><span class="bar"></span><span class="week-label">Now</span></li>
+                  <li class="week week--2"><span class="bar"></span><span class="week-label">Wk 2</span></li>
+                  <li class="week week--3"><span class="bar"></span><span class="week-label">Wk 3</span></li>
+                  <li class="week week--4 week--fix">
+                    <span class="week-status"><span class="status-short">Short</span><span class="status-covered">Covered</span></span>
+                    <span class="bar"></span><span class="week-label">Wk 4</span>
+                  </li>
+                  <li class="week week--5"><span class="bar"></span><span class="week-label">Wk 5</span></li>
+                  <li class="week week--6"><span class="bar"></span><span class="week-label">Wk 6</span></li>
+                  <li class="week week--7"><span class="bar"></span><span class="week-label">Wk 7</span></li>
+                </ol>
+              </div>
+
+              <div class="app-card skeleton">
+                <span class="sk-row"><span class="sk-dot"></span><span class="sk-line"></span><span class="sk-amt"></span></span>
+                <span class="sk-row"><span class="sk-dot"></span><span class="sk-line sk-line--short"></span><span class="sk-amt"></span></span>
+                <span class="sk-row"><span class="sk-dot"></span><span class="sk-line"></span><span class="sk-amt"></span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <main id="main">
-    <section class="hero" aria-labelledby="headline">
-      <div class="wrap">
-        <h1 id="headline">A budget that works the way you get paid.</h1>
-        <p class="lead">VorrBudget plans your money one paycheck at a time, so you know every week if you're covered.</p>
-
-        <h2 class="visually-hidden">Download</h2>
-        <ul class="stores">
-          <!-- STORE BUTTON: Google Play.
-               To go live, replace the <span> below with:
-               <a class="store" href="PLAY_STORE_URL">Get it on Google Play</a> -->
-          <li><span class="store store--soon"><span class="store-name">Google Play</span> <span class="store-status">Coming soon</span></span></li>
-
-          <!-- STORE BUTTON: iPhone.
-               To go live, replace the <span> below with:
-               <a class="store" href="APP_STORE_URL">Download for iPhone</a> -->
-          <li><span class="store store--soon"><span class="store-name">iPhone</span> <span class="store-status">Coming soon</span></span></li>
-
-          <!-- STORE BUTTON: Desktop.
-               To go live, replace the <span> below with:
-               <a class="store" href="DESKTOP_URL">Get it for Desktop</a> -->
-          <li><span class="store store--soon"><span class="store-name">Desktop</span> <span class="store-status">Coming soon</span></span></li>
+    <!-- Icons on this page: Feather (feather-icons 4.29.2, MIT License, see licenses/feather-LICENSE.txt and the footer credit). Decorative, hidden from screen readers. -->
+    <section class="band band--plain trust-band" aria-label="At a glance">
+      <div class="wrap reveal">
+        <ul class="trust">
+          <li><span class="icon-chip"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span><span>No bank login</span></li>
+          <li><span class="icon-chip"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span><span>Encrypted</span></li>
+          <li><span class="icon-chip"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg></span><span>No ads</span></li>
+          <li><span class="icon-chip"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span><span>Made for weekly pay</span></li>
         </ul>
       </div>
     </section>
 
-    <section aria-labelledby="why">
-      <div class="wrap">
-        <div class="card">
-          <h2 id="why">Why we built VorrBudget</h2>
+    <section class="band band--soft" aria-labelledby="how">
+      <div class="wrap reveal">
+        <h2 id="how" class="section-title">How it works</h2>
+        <ol class="steps">
+          <li class="card step">
+            <span class="step-num" aria-hidden="true">1</span>
+            <span class="icon-chip"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></span>
+            <h3>Add your paychecks</h3>
+          </li>
+          <li class="card step">
+            <span class="step-num" aria-hidden="true">2</span>
+            <span class="icon-chip"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></span>
+            <h3>Add your bills</h3>
+          </li>
+          <li class="card step">
+            <span class="step-num" aria-hidden="true">3</span>
+            <span class="icon-chip"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span>
+            <h3>See every week covered</h3>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band band--plain" aria-labelledby="why">
+      <div class="wrap reveal">
+        <div class="card card--story">
+          <h2 id="why" class="section-title">Why we built VorrBudget</h2>
           <p>We lived paycheck to paycheck for years. We always knew what was due: the mortgage, the car note, the electric bill. What we didn't know was how to get there when every check came in different.</p>
           <p>Budget apps didn't help. They all worked by the month, and we got paid by the week.</p>
           <p>So we made a spreadsheet that planned one paycheck at a time. Each Friday, we could see exactly which bills that check had to cover, and what was left. The bills got paid on time. Then something we didn't expect happened: we started saving, and it kept growing.</p>
@@ -70,18 +170,16 @@
       </div>
     </section>
 
-    <section aria-labelledby="what">
-      <div class="wrap">
-        <div class="card">
-          <h2 id="what">What it does</h2>
-          <ul class="features">
-            <li>Plans every bill on the paycheck before it's due, so nothing sneaks up on you.</li>
-            <li>Shows the weeks ahead in red and green, so you can see a short week coming and fix it early.</li>
-            <li>Handles hourly pay that changes week to week.</li>
-            <li>Shares one budget with your partner.</li>
-            <li>Never asks for your bank login. Your numbers are encrypted, and we don't sell your data or show ads.</li>
-          </ul>
-        </div>
+    <section class="band band--soft" aria-labelledby="what">
+      <div class="wrap reveal">
+        <h2 id="what" class="section-title">What it does</h2>
+        <ul class="features">
+          <li class="card feature"><span class="icon-chip"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span><p>Plans every bill on the paycheck before it's due, so nothing sneaks up on you.</p></li>
+          <li class="card feature"><span class="icon-chip"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></span><p>Shows the weeks ahead in red and green, so you can see a short week coming and fix it early.</p></li>
+          <li class="card feature"><span class="icon-chip"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span><p>Handles hourly pay that changes week to week.</p></li>
+          <li class="card feature"><span class="icon-chip"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><p>Shares one budget with your partner.</p></li>
+          <li class="card feature"><span class="icon-chip"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span><p>Never asks for your bank login. Your numbers are encrypted, and we don't sell your data or show ads.</p></li>
+        </ul>
       </div>
     </section>
 
@@ -89,9 +187,9 @@
          1. Put images in assets/screenshots/ (e.g. screen-1.png).
          2. Uncomment and fill in the <figure> blocks below (write real alt text).
          3. Remove the word "hidden" from the <section> tag. -->
-    <section aria-labelledby="screenshots" hidden>
+    <section class="band band--plain" aria-labelledby="screenshots" hidden>
       <div class="wrap">
-        <h2 id="screenshots">Screenshots</h2>
+        <h2 id="screenshots" class="section-title">Screenshots</h2>
         <ul class="shots">
           <!--
           <li>
@@ -117,10 +215,34 @@
       </div>
     </section>
 
-    <section aria-labelledby="waitlist">
-      <div class="wrap">
-        <div class="card">
-          <h2 id="waitlist">Want to know when it's ready?</h2>
+    <section class="band band--plain" aria-labelledby="faq">
+      <div class="wrap wrap--narrow reveal">
+        <h2 id="faq" class="section-title">Questions</h2>
+        <div class="faq">
+          <details class="card faq-item">
+            <summary><span>Do I have to connect my bank?</span><svg class="icon faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+            <p>No. You enter your own numbers, and VorrBudget never asks for a bank login.</p>
+          </details>
+          <details class="card faq-item">
+            <summary><span>Is my data private?</span><svg class="icon faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+            <p>Your numbers are encrypted. We don't sell your data or show ads.</p>
+          </details>
+          <details class="card faq-item">
+            <summary><span>Will it work for two people?</span><svg class="icon faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+            <p>Yes. You and your partner can share one budget.</p>
+          </details>
+          <details class="card faq-item">
+            <summary><span>When can I get it?</span><svg class="icon faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+            <p><a href="#waitlist">Join the waitlist</a>, and we'll email you the day it launches.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--soft" aria-labelledby="waitlist">
+      <div class="wrap wrap--narrow reveal">
+        <div class="card card--waitlist">
+          <h2 id="waitlist" class="section-title">Want to know when it's ready?</h2>
           <p>Leave your email, confirm it, and we'll let you know the day VorrBudget launches. No spam, and you can unsubscribe anytime.</p>
           <form class="signup" action="https://buttondown.com/api/emails/embed-subscribe/VorrBudget" method="post">
             <label for="email">Email address</label>
@@ -137,12 +259,13 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
+    <div class="wrap footer-row">
       <p>VorrHQ LLC</p>
       <ul class="footer-links">
         <li><a href="privacy.html">Privacy</a></li>
         <li><a href="mailto:hello@vorrbudget.com">Contact</a></li>
       </ul>
+      <p class="credits">Icons: Feather, <a href="licenses/feather-LICENSE.txt">MIT License</a></p>
     </div>
   </footer>
 </body>
