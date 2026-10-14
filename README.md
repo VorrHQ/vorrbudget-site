@@ -20,6 +20,7 @@ The only outside service is Buttondown (the waitlist form posts to it).
 | `assets/fonts/montserrat-latin-wght.woff2` | Montserrat, weights 400-700, Latin characters, from google/fonts `ofl/montserrat` |
 | `assets/fonts/OFL.txt` | Montserrat's license (SIL Open Font License 1.1) |
 | `licenses/feather-LICENSE.txt` | MIT license for the Feather icons on the home page (linked from the footer credit) |
+| `assets/og-image.png` | Share image (1200x630) used when links are posted on social media |
 | `CNAME` | Custom domain for GitHub Pages |
 | `.nojekyll` | Tells GitHub Pages to serve files as-is (needed for `.well-known/`) |
 | `.well-known/assetlinks.json` | Android app links (empty for now) |
@@ -29,5 +30,6 @@ The only outside service is Buttondown (the waitlist form posts to it).
 - **Logos / icon:** overwrite the files above, keeping the same names. If `app-icon.svg` changes, re-make `app-icon.png` at 512x512.
 - **Store buttons:** in `index.html`, search for `STORE BUTTON`. Each button has a comment with the exact line to swap in.
 - **Weeks strip labels:** in `index.html`, search for `WEEKS STRIP`.
+- **Phone screenshot in the hero:** in `index.html`, search for `PHONE`; the comment says what to replace.
 - **Screenshots:** in `index.html`, search for `SCREENSHOTS` and follow the three steps in the comment.
 - **App privacy policy:** in `privacy.html`, search for `APP PRIVACY POLICY`.
