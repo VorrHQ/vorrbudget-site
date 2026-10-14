@@ -1,0 +1,334 @@
+/* VorrBudget site styles. Palette 1. All text pairs are at least 7:1 contrast. */
+
+:root {
+  --bg: #F4F7FB;
+  --card: #FFFFFF;
+  --text: #0B1426;
+  --muted: #3D4F68;
+  --navy: #1E3A5F;
+  --green: #065F46;
+  --on-navy: #FFFFFF;
+  --border: #3D4F68;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0B1426;
+    --card: #152238;
+    --text: #F4F7FB;
+    --muted: #B0BCCE;
+    --navy: #90B4DE;
+    --green: #4ADE80;
+    --on-navy: #0B1426;
+    --border: #B0BCCE;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--navy);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 3px;
+}
+
+h1,
+h2 {
+  line-height: 1.2;
+  color: var(--text);
+}
+
+h1 {
+  font-size: clamp(2rem, 7vw, 3rem);
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+.wrap {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.5rem 1rem;
+  background: var(--navy);
+  color: var(--on-navy);
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Header */
+.site-header {
+  padding: 1.25rem 0;
+}
+
+.logo-link {
+  display: inline-block;
+}
+
+.logo {
+  display: block;
+  height: 2.5rem;
+  width: auto;
+}
+
+/* Hero */
+.hero {
+  padding: 2rem 0 2.5rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+/* Store buttons */
+.stores {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.store {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 3.5rem;
+  padding: 0.6rem 0.4rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.3;
+  border: 2px solid var(--navy);
+  background: var(--navy);
+  color: var(--on-navy);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Disabled "Coming soon" state: dashed outline, no fill, not a link. */
+.store--soon {
+  background: var(--card);
+  color: var(--muted);
+  border: 2px dashed var(--border);
+  cursor: not-allowed;
+}
+
+.store-status {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+/* Sections and cards */
+main > section {
+  padding: 0 0 1.5rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 1rem;
+  padding: 1.5rem 1.25rem;
+}
+
+.card > :last-child {
+  margin-bottom: 0;
+}
+
+.features {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.features li {
+  margin-bottom: 0.75rem;
+}
+
+.features li:last-child {
+  margin-bottom: 0;
+}
+
+.features li::marker {
+  color: var(--green);
+}
+
+/* Screenshots */
+.shots {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1rem;
+}
+
+.shots figure {
+  margin: 0;
+}
+
+.shots img {
+  display: block;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.shots figcaption {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* Waitlist form */
+.signup label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.signup-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.signup input[type="email"] {
+  flex: 1 1 14rem;
+  min-height: 3rem;
+  padding: 0.5rem 0.75rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 0.5rem;
+}
+
+.signup button {
+  flex: 0 0 auto;
+  min-height: 3rem;
+  padding: 0.5rem 1.25rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--on-navy);
+  background: var(--navy);
+  border: 2px solid var(--navy);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.note {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* Privacy page */
+.prose {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.prose h2 {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+}
+
+/* Footer */
+.site-footer {
+  padding: 2rem 0 3rem;
+  color: var(--muted);
+}
+
+.site-footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .store--soon {
+    border-style: dashed;
+  }
+}
