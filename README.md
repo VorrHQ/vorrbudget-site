@@ -27,5 +27,6 @@ The only outside service is Buttondown (the waitlist form posts to it).
 
 - **Logos / icon:** overwrite the files above, keeping the same names. If `app-icon.svg` changes, re-make `app-icon.png` at 512x512.
 - **Store buttons:** in `index.html`, search for `STORE BUTTON`. Each button has a comment with the exact line to swap in.
+- **Weeks strip dates:** in `index.html`, search for `WEEKS STRIP`; the dates are example labels.
 - **Screenshots:** in `index.html`, search for `SCREENSHOTS` and follow the three steps in the comment.
 - **App privacy policy:** in `privacy.html`, search for `APP PRIVACY POLICY`.

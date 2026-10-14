@@ -20,6 +20,7 @@
   --on-navy: #FFFFFF;
   --border: #3D4F68;
   --wordmark: #1E3A5F;
+  --red: #991B1B;
   --font: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -34,6 +35,7 @@
     --on-navy: #0B1426;
     --border: #B0BCCE;
     --wordmark: #FFFFFF;
+    --red: #FCA5A5;
   }
 }
 
@@ -166,6 +168,116 @@ p {
   margin-bottom: 2rem;
 }
 
+/* Weeks strip (illustration). The base styles are the final, all-green state;
+   the animation runs once from red/"Short" to green/"Covered" and holds.
+   With reduced motion, animations are turned off below, so only the final state shows. */
+.weeks {
+  background: var(--card);
+  border-radius: 1rem;
+  padding: 1rem 0.75rem 0.75rem;
+  margin: 0 0 2rem;
+}
+
+.weeks-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.375rem;
+}
+
+.week {
+  display: grid;
+  grid-template-rows: 1.25rem 5.5rem auto;
+  justify-items: center;
+  min-width: 0;
+}
+
+.bar {
+  grid-row: 2;
+  align-self: end;
+  width: 100%;
+  max-width: 2.25rem;
+  border-radius: 0.5rem;
+  background: var(--green);
+  transform-origin: bottom;
+}
+
+.week--1 .bar { height: 70%; }
+.week--2 .bar { height: 85%; }
+.week--3 .bar { height: 60%; }
+.week--4 .bar { height: 75%; }
+.week--5 .bar { height: 80%; }
+.week--6 .bar { height: 65%; }
+.week--7 .bar { height: 90%; }
+
+.week-label {
+  grid-row: 3;
+  margin-top: 0.4rem;
+  font-size: 0.6875rem;
+  line-height: 1.2;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.week-status {
+  grid-row: 1;
+  display: grid;
+  justify-items: center;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.status-short,
+.status-covered {
+  grid-area: 1 / 1;
+}
+
+.status-short {
+  color: var(--red);
+  opacity: 0;
+}
+
+.status-covered {
+  color: var(--green);
+}
+
+.week--fix .bar {
+  animation: week-fix-bar 3s ease-in-out 0.5s both;
+}
+
+.week--fix .status-short {
+  animation: week-fix-out 3s ease-in-out 0.5s both;
+}
+
+.week--fix .status-covered {
+  animation: week-fix-in 3s ease-in-out 0.5s both;
+}
+
+@keyframes week-fix-bar {
+  0%, 35% {
+    background: var(--red);
+    transform: scaleY(0.6);
+  }
+  100% {
+    background: var(--green);
+    transform: scaleY(1);
+  }
+}
+
+@keyframes week-fix-out {
+  0%, 40% { opacity: 1; }
+  70%, 100% { opacity: 0; }
+}
+
+@keyframes week-fix-in {
+  0%, 40% { opacity: 0; }
+  70%, 100% { opacity: 1; }
+}
+
 /* Store buttons */
 .stores {
   list-style: none;
@@ -222,20 +334,28 @@ main > section {
 }
 
 .features {
+  list-style: none;
   margin: 0;
-  padding-left: 1.25rem;
+  padding: 0;
 }
 
 .features li {
-  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
 }
 
 .features li:last-child {
   margin-bottom: 0;
 }
 
-.features li::marker {
-  color: var(--green);
+.feature-icon {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0.05rem;
+  color: var(--muted);
 }
 
 /* Screenshots */
@@ -353,5 +473,14 @@ main > section {
 @media (forced-colors: active) {
   .store--soon {
     border-style: dashed;
+  }
+
+  .bar {
+    forced-color-adjust: none;
+    background: CanvasText;
+  }
+
+  .week--fix .bar {
+    animation: none;
   }
 }
