@@ -455,6 +455,11 @@ main > section {
   margin: 0;
 }
 
+.site-footer .credits {
+  flex-basis: 100%;
+  font-size: 0.875rem;
+}
+
 .footer-links {
   list-style: none;
   margin: 0;
