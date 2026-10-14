@@ -19,6 +19,7 @@
   --green: #065F46;
   --on-navy: #FFFFFF;
   --border: #3D4F68;
+  --wordmark: #1E3A5F;
   --font: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -32,6 +33,7 @@
     --green: #4ADE80;
     --on-navy: #0B1426;
     --border: #B0BCCE;
+    --wordmark: #FFFFFF;
   }
 }
 
@@ -133,13 +135,24 @@ p {
 }
 
 .logo-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
 }
 
-.logo {
+.logo-mark {
   display: block;
   height: 2.5rem;
   width: auto;
+}
+
+.wordmark {
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--wordmark);
 }
 
 /* Hero */

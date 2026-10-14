@@ -11,8 +11,8 @@
   <link rel="canonical" href="https://vorrbudget.com/">
   <link rel="preload" href="assets/fonts/montserrat-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
-  <!-- APP ICON: upload as assets/app-icon.png (square, 512x512 recommended) -->
-  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/app-icon.png">
+  <link rel="icon" type="image/svg+xml" href="assets/app-icon.svg">
   <link rel="apple-touch-icon" href="assets/app-icon.png">
 </head>
 <body>
@@ -21,11 +21,12 @@
   <header class="site-header">
     <div class="wrap">
       <a class="logo-link" href="/">
-        <!-- LOGO: upload assets/logo-light.svg (light mode) and assets/logo-dark.svg (dark mode) -->
+        <!-- LOGO: symbol (light/dark SVG) + the word "VorrBudget" as text in Montserrat Bold -->
         <picture>
-          <source srcset="assets/logo-dark.svg" media="(prefers-color-scheme: dark)">
-          <img class="logo" src="assets/logo-light.svg" alt="VorrBudget home" width="200" height="48">
+          <source srcset="assets/logo-mark-dark.svg" media="(prefers-color-scheme: dark)">
+          <img class="logo-mark" src="assets/logo-mark-light.svg" alt="" width="352" height="425">
         </picture>
+        <span class="wordmark">VorrBudget</span>
       </a>
     </div>
   </header>

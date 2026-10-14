@@ -13,9 +13,10 @@ The only outside service is Buttondown (the waitlist form posts to it).
 | `privacy.html` | Privacy page |
 | `404.html` | Not-found page |
 | `styles.css` | All styles (light and dark mode) |
-| `assets/logo-light.svg` | Logo for light mode (**placeholder, replace**) |
-| `assets/logo-dark.svg` | Logo for dark mode (**placeholder, replace**) |
-| `assets/app-icon.png` | App icon, used as the site icon (**add this file**) |
+| `assets/logo-mark-light.svg` | Logo symbol for light mode (the word "VorrBudget" next to it is HTML text in Montserrat Bold) |
+| `assets/logo-mark-dark.svg` | Logo symbol for dark mode |
+| `assets/app-icon.svg` | App icon, used as the browser tab icon |
+| `assets/app-icon.png` | App icon, 512x512, made from `app-icon.svg`; tab icon fallback and Apple touch icon |
 | `assets/fonts/montserrat-latin-wght.woff2` | Montserrat, weights 400-700, Latin characters, from google/fonts `ofl/montserrat` |
 | `assets/fonts/OFL.txt` | Montserrat's license (SIL Open Font License 1.1) |
 | `CNAME` | Custom domain for GitHub Pages |
@@ -24,7 +25,7 @@ The only outside service is Buttondown (the waitlist form posts to it).
 
 ## Common edits
 
-- **Logos / icon:** overwrite the files above, keeping the same names.
+- **Logos / icon:** overwrite the files above, keeping the same names. If `app-icon.svg` changes, re-make `app-icon.png` at 512x512.
 - **Store buttons:** in `index.html`, search for `STORE BUTTON`. Each button has a comment with the exact line to swap in.
 - **Screenshots:** in `index.html`, search for `SCREENSHOTS` and follow the three steps in the comment.
 - **App privacy policy:** in `privacy.html`, search for `APP PRIVACY POLICY`.
