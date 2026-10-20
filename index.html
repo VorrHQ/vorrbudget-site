@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; form-action 'none'; base-uri 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; form-action 'self' https://buttondown.com/api/emails/embed-subscribe/VorrBudget; base-uri 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin">
   <meta name="color-scheme" content="light dark">
   <title>VorrBudget: Budget by the paycheck</title>
@@ -19,12 +19,12 @@
   <meta property="og:image" content="https://vorrbudget.com/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="VorrBudget logo and the words: A budget that works the way you get paid.">
+  <meta property="og:image:alt" content="VorrBudget logo and the words: Budget by the paycheck, without ever giving us your bank login.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="VorrBudget: Budget by the paycheck">
   <meta name="twitter:description" content="Budget by the paycheck, without ever giving us your bank login. Coming soon to Google Play.">
   <meta name="twitter:image" content="https://vorrbudget.com/assets/og-image.png">
-  <meta name="twitter:image:alt" content="VorrBudget logo and the words: A budget that works the way you get paid.">
+  <meta name="twitter:image:alt" content="VorrBudget logo and the words: Budget by the paycheck, without ever giving us your bank login.">
 
   <link rel="preload" href="assets/fonts/montserrat-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
@@ -60,12 +60,33 @@
     </div>
   </header>
 
-  <main id="main" class="sections">
-    <div class="wrap wrap--narrow">
+  <main id="main">
+    <!-- WAITLIST: plain HTML form, no JavaScript. It posts the email address to Buttondown
+         (the service named on privacy.html). The page's Content-Security-Policy form-action
+         allows only this page's own site and this one Buttondown address. -->
+    <section class="waitlist" aria-labelledby="waitlist">
+      <div class="wrap wrap--narrow">
+        <div class="waitlist-card">
+          <h2 id="waitlist">Get notified when VorrBudget launches</h2>
+          <p>Leave your email, confirm it, and we'll let you know the day VorrBudget launches. No spam, and you can unsubscribe anytime.</p>
+          <form class="signup" action="https://buttondown.com/api/emails/embed-subscribe/VorrBudget" method="post">
+            <label for="email">Email address</label>
+            <div class="signup-row">
+              <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-note">
+              <input type="hidden" name="embed" value="1">
+              <button type="submit">Join the waitlist</button>
+            </div>
+            <p id="email-note" class="note">Your email goes to Buttondown, the service we use to send it. It's only used for launch news. <a href="privacy.html">Website privacy</a></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap wrap--narrow sections">
       <!-- Icons on this page: Feather (feather-icons 4.29.2, MIT License, see licenses/feather-LICENSE.txt and the footer credit). Decorative, hidden from screen readers. -->
 
       <!-- 2. WHAT VORRBUDGET DOES -->
-      <details class="section" id="what">
+      <details class="section" id="what" open>
         <summary><h2>What VorrBudget does</h2><svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
         <div class="section-body">
           <div class="group">
@@ -189,7 +210,7 @@
           </details>
           <details class="faq-item">
             <summary><h3>How do I contact you?</h3><svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
-            <p>Email <a href="mailto:support@vorrbudget.com">support@vorrbudget.com</a>.</p>
+            <p>Email <a href="mailto:hello@vorrbudget.com">hello@vorrbudget.com</a>.</p>
           </details>
         </div>
       </details>
@@ -202,7 +223,7 @@
       <p>&copy; VorrHQ LLC</p>
       <ul class="footer-links">
         <li><a href="privacy.html">Website privacy</a></li>
-        <li><a href="mailto:support@vorrbudget.com">Contact</a></li>
+        <li><a href="mailto:hello@vorrbudget.com">Contact</a></li>
       </ul>
       <p class="credits">Icons: Feather, <a href="licenses/feather-LICENSE.txt">MIT License</a></p>
     </div>

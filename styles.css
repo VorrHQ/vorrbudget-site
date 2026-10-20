@@ -37,6 +37,7 @@
   --link: #1E3A5F;
   --brand-green: #16A34A;      /* icons and large shapes only */
   --green-text: #166534;       /* small green text (7.1:1 on white) */
+  --on-green: #FFFFFF;
   --chip: #EFF8F2;
   --hairline: rgba(30, 58, 95, 0.14);
   --focus: #1E3A5F;
@@ -57,6 +58,7 @@
     --link: #90B4DE;
     --brand-green: #16A34A;
     --green-text: #4ADE80;
+    --on-green: #0B1426;
     --chip: rgba(74, 222, 128, 0.12);
     --hairline: rgba(176, 188, 206, 0.16);
     --focus: #90B4DE;
@@ -288,14 +290,90 @@ p {
   }
 }
 
-/* Expandable sections (home page) */
-.sections {
-  padding: var(--s6) 0 var(--s7);
+/* Waitlist (home page, right under the hero) */
+.waitlist {
+  padding: var(--s6) 0 0;
 }
 
-.sections > .wrap {
+.waitlist-card {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--s5);
+}
+
+.waitlist-card h2 {
+  font-size: clamp(1.1875rem, 1.5vw + 0.9rem, 1.4375rem);
+  margin-bottom: var(--s3);
+}
+
+.signup label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--s2);
+}
+
+.signup-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3);
+}
+
+.signup input[type="email"] {
+  flex: 1 1 14rem;
+  min-width: 0;
+  min-height: 3.25rem;
+  padding: var(--s2) var(--s4);
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1.5px solid var(--muted);
+  border-radius: var(--radius-sm);
+}
+
+/* Small text on green: the darker green keeps white text at 7:1. */
+.signup button {
+  flex: 1 0 auto;
+  min-height: 3.25rem;
+  padding: var(--s2) var(--s5);
+  font: inherit;
+  font-weight: 700;
+  color: var(--on-green);
+  background: var(--green-text);
+  border: 1.5px solid var(--green-text);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.signup button:hover {
+  text-decoration: underline;
+}
+
+.note {
+  margin: var(--s3) 0 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+@media (min-width: 30rem) {
+  .signup button {
+    flex-grow: 0;
+  }
+}
+
+@media (min-width: 40rem) {
+  .waitlist-card {
+    padding: var(--s6);
+  }
+}
+
+/* Expandable sections (home page) */
+.sections {
   display: grid;
   gap: var(--s3);
+  padding-top: var(--s6);
+  padding-bottom: var(--s7);
 }
 
 .section,

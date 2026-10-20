@@ -3,13 +3,13 @@
 The VorrBudget website, served by GitHub Pages at https://vorrbudget.com.
 
 Plain HTML and CSS. No build step, no JavaScript, no cookies, no trackers. Fonts are self-hosted.
-The home page makes no requests to any other site. (`privacy.html` still describes the old Buttondown waitlist; that page is intentionally left unchanged.)
+The only outside service is Buttondown: the waitlist form (plain HTML, no JavaScript) posts to it. The home page's Content-Security-Policy allows form submissions only to this site and that one Buttondown address.
 
 ## Files
 
 | File | What it is |
 | --- | --- |
-| `index.html` | Home page: always-visible hero, then expandable sections (`<details>`) |
+| `index.html` | Home page: always-visible hero, the waitlist form, then expandable sections (`<details>`; "What VorrBudget does" starts open) |
 | `privacy.html` | Privacy page |
 | `404.html` | Not-found page |
 | `styles.css` | All styles (light and dark mode) |
@@ -23,7 +23,7 @@ The home page makes no requests to any other site. (`privacy.html` still describ
 | `assets/fonts/montserrat-latin-wght.woff2` | Montserrat, weights 400-700, Latin characters, from google/fonts `ofl/montserrat` |
 | `assets/fonts/OFL.txt` | Montserrat's license (SIL Open Font License 1.1) |
 | `licenses/feather-LICENSE.txt` | MIT license for the Feather icons on the home page (linked from the footer credit) |
-| `assets/og-image.png` | Share image (1200x630) used when links are posted on social media |
+| `assets/og-image.png` | Share image (1200x630) used when links are posted on social media: light logo and the hero headline |
 | `CNAME` | Custom domain for GitHub Pages |
 | `.nojekyll` | Tells GitHub Pages to serve files as-is (needed for `.well-known/`) |
 | `.well-known/assetlinks.json` | Android app links (empty for now) |
