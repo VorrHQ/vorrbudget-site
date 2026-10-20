@@ -3,19 +3,22 @@
 The VorrBudget website, served by GitHub Pages at https://vorrbudget.com.
 
 Plain HTML and CSS. No build step, no JavaScript, no cookies, no trackers. Fonts are self-hosted.
-The only outside service is Buttondown (the waitlist form posts to it).
+The home page makes no requests to any other site. (`privacy.html` still describes the old Buttondown waitlist; that page is intentionally left unchanged.)
 
 ## Files
 
 | File | What it is |
 | --- | --- |
-| `index.html` | Home page |
+| `index.html` | Home page: always-visible hero, then expandable sections (`<details>`) |
 | `privacy.html` | Privacy page |
 | `404.html` | Not-found page |
 | `styles.css` | All styles (light and dark mode) |
-| `assets/logo-mark-light.svg` | Logo symbol for light mode (the word "VorrBudget" next to it is HTML text in Montserrat Bold) |
+| `assets/brand/VorrBudget_logo_light.svg` / `.png` | Full logo for light mode (white background), used in the home page hero |
+| `assets/brand/VorrBudget_logo_dark.png` | Full logo for dark mode (#0B1426 background), used in the home page hero |
+| `assets/brand/VorrBudget_app_icon.svg` / `.png` | App icon; favicon and Apple touch icon on the home and 404 pages |
+| `assets/logo-mark-light.svg` | Logo symbol for light mode, used by `privacy.html` (the word "VorrBudget" next to it is HTML text in Montserrat Bold) |
 | `assets/logo-mark-dark.svg` | Logo symbol for dark mode |
-| `assets/app-icon.svg` | App icon, used as the browser tab icon |
+| `assets/app-icon.svg` | Older app icon, still used by `privacy.html` |
 | `assets/app-icon.png` | App icon, 512x512, made from `app-icon.svg`; tab icon fallback and Apple touch icon |
 | `assets/fonts/montserrat-latin-wght.woff2` | Montserrat, weights 400-700, Latin characters, from google/fonts `ofl/montserrat` |
 | `assets/fonts/OFL.txt` | Montserrat's license (SIL Open Font License 1.1) |
@@ -27,9 +30,6 @@ The only outside service is Buttondown (the waitlist form posts to it).
 
 ## Common edits
 
-- **Logos / icon:** overwrite the files above, keeping the same names. If `app-icon.svg` changes, re-make `app-icon.png` at 512x512.
-- **Store buttons:** in `index.html`, search for `STORE BUTTON`. Each button has a comment with the exact line to swap in.
-- **Weeks strip labels:** in `index.html`, search for `WEEKS STRIP`.
-- **Phone screenshot in the hero:** in `index.html`, search for `PHONE`; the comment says what to replace.
-- **Screenshots:** in `index.html`, search for `SCREENSHOTS` and follow the three steps in the comment.
+- **Logos / icon:** overwrite the files in `assets/brand/`, keeping the same names. The hero background is white in light mode and #0B1426 in dark mode to match the logo files' own backgrounds.
+- **Google Play / pre-registration link:** in `index.html`, search for `PLAY STORE`. The comment has the exact line to swap in.
 - **App privacy policy:** in `privacy.html`, search for `APP PRIVACY POLICY`.
